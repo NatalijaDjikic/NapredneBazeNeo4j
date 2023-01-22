@@ -1,0 +1,112 @@
+CREATE 
+(leonardo:Slikar{id:0,ime:"Leonardo ", prezime:"da Vinci"}),
+(jean:Slikar{id:1,ime:"Jean-Antoine", prezime:"Watteau"}),
+(eugene:Slikar{id:2,ime:"Eugene", prezime:"Delacroix"}),
+(claude:Slikar{id:3,ime:"Claude", prezime:"Monet"}),
+(georges:Slikar{id:4,ime:"Georges", prezime:"Seurat"}),
+(vincent:Slikar{id:5,ime:"Vincent", prezime:"van Gogh"}),
+(edvard:Slikar{id:6,ime:"Edvard", prezime:"Munch"}),
+
+
+(monalisa:UmetnickoDelo{id:0,naziv: "Mona Lisa",bojarama:"zlatni"}),
+(thelastsupper:UmetnickoDelo{id:1,naziv: "The Last Supper",bojarama:"zlatni"}),
+(thescaleoflove:UmetnickoDelo{id:2,naziv: "The Scale of Love",bojarama:"srebrni"}),
+(ceres:UmetnickoDelo{id:3,naziv: "Ceres",bojarama:"zlatni"}),
+(danteovabarka:UmetnickoDelo{id:4,naziv: "Danteova barka",bojarama:"zlatni"}),
+(lovnalava:UmetnickoDelo{id:5,naziv: "Lov na lava",bojarama:"srebrni"}),
+(japanskimost:UmetnickoDelo{id:6,naziv: "Japanski most",bojarama:"zlatni"}),
+(zeneuvrtu:UmetnickoDelo{id:7,naziv: "Zene u vrtu",bojarama:"zuti"}),
+(theeiffeltower:UmetnickoDelo{id:8,naziv: "The Eiffel Tower",bojarama:"zlatni"}),
+(thecircus:UmetnickoDelo{id:9,naziv: "The Circus",bojarama:"srebrni"}),
+(zvezdananoc:UmetnickoDelo{id:10,naziv: "Zvezdana noc",bojarama:"zlatni"}),
+(irisi:UmetnickoDelo{id:11,naziv: "Irisi",bojarama:"zlatni"}),
+(vampire:UmetnickoDelo{id:12,naziv: "Vampire",bojarama:"zlatni"}),
+(thekiss:UmetnickoDelo{id:13,naziv: "The kiss",bojarama:"zlatni"}),
+
+(lelouvre:Muzej{id:0,naziv: "Le Louvre",kapacitet:150,lokacija:"Paris"}),
+(theacropolismuseum:Muzej{id:1,naziv: "The Acropolis Museum",kapacitet:180,lokacija:"Atina"}),
+(theprado:Muzej{id:2,naziv: "The Prado",kapacitet:170,lokacija:"Madrid"}),
+
+
+(leonardo)-[:PAINTED]->(monalisa),
+(leonardo)-[:PAINTED]->(thelastsupper),
+(jean)-[:PAINTED]->(thescaleoflove),
+(jean)-[:PAINTED]->(ceres),
+(eugene)-[:PAINTED]->(danteovabarka),
+(eugene)-[:PAINTED]->(lovnalava),
+(claude)-[:PAINTED]->(japanskimost),
+(claude)-[:PAINTED]->(zeneuvrtu),
+(georges)-[:PAINTED]->(theeiffeltower),
+(georges)-[:PAINTED]->(thecircus),
+(vincent)-[:PAINTED]-> (zvezdananoc),
+(vincent)-[:PAINTED]->(irisi),
+(edvard)-[:PAINTED]-> (vampire),
+(edvard)-[:PAINTED]->(thekiss),
+
+
+(leonardo)<-[:PAINTEDBY]- (monalisa),
+(leonardo)<-[:PAINTEDBY]- (thelastsupper),
+(jean)<-[:PAINTEDBY]-(thescaleoflove),
+(jean)<-[:PAINTEDBY]- (ceres),
+(eugene)<-[:PAINTEDBY]-(danteovabarka),
+(eugene)<-[:PAINTEDBY]-(lovnalava),
+(claude)<-[:PAINTEDBY]- (japanskimost),
+(claude)<-[:PAINTEDBY]-(zeneuvrtu),
+(georges)<-[:PAINTEDBY]- (theeiffeltower),
+(georges)<-[:PAINTEDBY]- (thecircus),
+(vincent)<-[:PAINTEDBY]- (zvezdananoc),
+(vincent)<-[:PAINTEDBY]-(irisi),
+(edvard)<-[:PAINTEDBY]- (vampire),
+(edvard)<-[:PAINTEDBY]- (thekiss),
+
+(monalisa)-[:IS_IN]->(lelouvre),
+(thelastsupper)-[:IS_IN]->(lelouvre),
+(thescaleoflove)-[:IS_IN]->(lelouvre),
+(ceres)-[:IS_IN]->(theacropolismuseum),
+(danteovabarka)-[:IS_IN]->(theacropolismuseum),
+(lovnalava)-[:IS_IN]->(theacropolismuseum),
+(japanskimost)-[:IS_IN]->(theacropolismuseum),
+(zeneuvrtu)-[:IS_IN]->(theacropolismuseum),
+(theeiffeltower)-[:IS_IN]->(theprado),
+(thecircus)-[:IS_IN]->(theprado),
+(zvezdananoc)-[:IS_IN]->(theprado),
+(irisi)-[:IS_IN]->(theprado),
+(vampire)-[:IS_IN]->(theacropolismuseum),
+(thekiss)-[:IS_IN]->(theprado),
+
+
+
+(monalisa)-[:BELONGTOTHESAMEARTIST]->(thelastsupper),
+(monalisa)<-[:BELONGTOTHESAMEARTIST]-(thelastsupper),
+(thescaleoflove)-[:BELONGTOTHESAMEARTIST]->(ceres),
+(thescaleoflove)<-[:BELONGTOTHESAMEARTIST]-(ceres),
+(danteovabarka)-[:BELONGTOTHESAMEARTIST]->(lovnalava),
+(danteovabarka)<-[:BELONGTOTHESAMEARTIST]-(lovnalava),
+(japanskimost)-[:BELONGTOTHESAMEARTIST]->(zeneuvrtu),
+(japanskimost)<-[:BELONGTOTHESAMEARTIST]-(zeneuvrtu),
+(theeiffeltower)-[:BELONGTOTHESAMEARTIST]->(thecircus),
+(theeiffeltower)<-[:BELONGTOTHESAMEARTIST]-(thecircus),
+(zvezdananoc)-[:BELONGTOTHESAMEARTIST]->(irisi),
+(zvezdananoc)<-[:BELONGTOTHESAMEARTIST]-(irisi),
+(vampire)-[:BELONGTOTHESAMEARTIST]->(thekiss),
+(vampire)<-[:BELONGTOTHESAMEARTIST]-(thekiss);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
